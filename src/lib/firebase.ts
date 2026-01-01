@@ -11,25 +11,15 @@ import {
     getDoc
 } from "firebase/firestore";
 
-// TODO: Replace with your actual Firebase config keys
 const firebaseConfig = {
-
-    apiKey: "AIzaSyAiHI761iwpNC--PPpViCfM3hLayo_HfKc",
-
-    authDomain: "override-shops.firebaseapp.com",
-
-    databaseURL: "https://override-shops-default-rtdb.firebaseio.com",
-
-    projectId: "override-shops",
-
-    storageBucket: "override-shops.firebasestorage.app",
-
-    messagingSenderId: "960396045126",
-
-    appId: "1:960396045126:web:2ea11a43a8133268481347",
-
-    measurementId: "G-T61ETT4EYD"
-
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "AIzaSyAiHI761iwpNC--PPpViCfM3hLayo_HfKc",
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "override-shops.firebaseapp.com",
+    databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL || "https://override-shops-default-rtdb.firebaseio.com",
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "override-shops",
+    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || "override-shops.firebasestorage.app",
+    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "960396045126",
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || "1:960396045126:web:2ea11a43a8133268481347",
+    measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || "G-T61ETT4EYD"
 };
 
 // Initialize Firebase

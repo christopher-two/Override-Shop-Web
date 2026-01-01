@@ -40,15 +40,12 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
     }
 
     return (
-        <div className="container" style={{ padding: "2rem 1rem" }}>
-            <h1 style={{
-                marginBottom: "2rem",
-                fontFamily: "var(--font-mono)",
-                borderBottom: "1px solid var(--border-color)",
-                paddingBottom: "1rem"
-            }}>
-                ~/shop {collectionFilter ? `/ collection: ${collectionName}` : categoryFilter ? `/ category: ${categoryFilter}` : ""}
-            </h1>
+        <div className="container" style={{ paddingTop: "2rem", paddingBottom: "2rem" }}>
+            <div className="shop-page-header">
+                <h1 style={{ marginBottom: 0 }}>
+                    ~/shop {collectionFilter ? `/ collection: ${collectionName}` : categoryFilter ? `/ category: ${categoryFilter}` : ""}
+                </h1>
+            </div>
 
             <div style={{ display: "flex", gap: "2rem", flexDirection: "column" }}>
                 {/* Filters */}
@@ -67,7 +64,7 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
                 </div>
 
                 {/* Product Grid */}
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))", gap: "2rem" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "2rem" }}>
                     {filteredProducts.map((product) => (
                         <ProductCard key={product.id} product={product} />
                     ))}

@@ -39,23 +39,25 @@ export default async function ProductPage({ params }: ProductPageProps) {
     }
 
     return (
-        <div className="container" style={{ padding: "4rem 1rem" }}>
+        <div className="container" style={{ padding: "2rem 0" }}>
             <Link href="/shop" className="btn btn-outline" style={{ marginBottom: "2rem", display: "inline-flex" }}>
                 &lt; Back to Shop
             </Link>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
+            <div className="product-details-grid">
                 {/* Image Section */}
-                <div style={{
-                    backgroundColor: "var(--surface-color)",
-                    border: "1px solid var(--border-color)",
-                    borderRadius: "var(--radius)",
-                    height: "400px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    overflow: "hidden"
-                }}>
+                <div
+                    className="product-image-container"
+                    style={{
+                        backgroundColor: "var(--surface-color)",
+                        border: "1px solid var(--border-color)",
+                        borderRadius: "var(--radius)",
+                        height: "400px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        overflow: "hidden"
+                    }}>
                     {product.image ? (
                         <img src={product.image} alt={product.name} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
                     ) : (
@@ -65,7 +67,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
                 {/* Details Section */}
                 <div>
-                    <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem", color: "var(--text-primary)" }}>{product.name}</h1>
+                    <h1 style={{ fontSize: "2rem", marginBottom: "1rem", color: "var(--text-primary)" }}>{product.name}</h1>
                     <div style={{
                         fontSize: "1.5rem",
                         color: "var(--accent-color)",

@@ -31,7 +31,7 @@ export default function CartDrawer() {
                 backgroundColor: "rgba(0,0,0,0.5)", zIndex: 999
             }} />
             <div className="cart-drawer" style={{
-                position: "fixed", top: 0, right: 0, bottom: 0, width: "350px",
+                position: "fixed", top: 0, right: 0, bottom: 0, width: "min(350px, 100vw)",
                 backgroundColor: "var(--bg-color)", borderLeft: "1px solid var(--border-color)",
                 zIndex: 1000, padding: "1.5rem", display: "flex", flexDirection: "column"
             }}>

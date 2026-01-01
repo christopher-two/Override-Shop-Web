@@ -19,7 +19,7 @@ export default function Footer() {
                         <h3 style={{ fontSize: "1.5rem", fontWeight: "normal", marginBottom: "1rem" }}>Upgrade your setup</h3>
                     </div>
 
-                    <div style={{ display: "flex", gap: "4rem", flexWrap: "wrap" }}>
+                    <div className="footer-links-container">
                         <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                             <strong style={{ marginBottom: "0.5rem", fontSize: "0.9rem" }}>Product</strong>
                             <Link href="/shop?category=Keyboards" style={{ color: "var(--text-secondary)", fontSize: "0.9rem" }}>Keyboards</Link>

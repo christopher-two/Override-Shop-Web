@@ -12,11 +12,11 @@ export default async function CollectionsPage() {
     const collections = await getCollections();
 
     return (
-        <div className="container" style={{ padding: "4rem 1rem" }}>
+        <div className="container" style={{ padding: "2rem 0" }}>
             <h1 style={{ marginBottom: "2rem", fontFamily: "var(--font-mono)" }}>
                 ~/collections
             </h1>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "2rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "2rem" }}>
                 {collections.map((col) => (
                     <Link key={col.id} href={`/shop?collection=${col.id}`} style={{ textDecoration: "none" }}>
                         <div style={{
