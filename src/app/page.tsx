@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
+import ServicesSection from "@/components/ServicesSection";
 import { getProducts, getCategories, Product } from "@/lib/firebase";
 import Link from "next/link";
 
@@ -16,6 +17,7 @@ export default async function Home() {
   return (
     <div>
       <Hero />
+      <ServicesSection />
 
       {/* Categories Section */}
       <section className="container" style={{ margin: "4rem auto" }}>
