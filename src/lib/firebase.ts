@@ -257,6 +257,37 @@ export async function getProductsByCollection(collectionId: string): Promise<Pro
 }
 
 /**
+ * Fetch a single product by Collection ID and Product ID (Direct Path)
+ * Path: products/{collectionId}/items/{productId}
+ */
+export async function getProduct(collectionId: string, productId: string): Promise<Product | null> {
+    try {
+        const docRef = doc(db, "products", collectionId, "items", productId);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            const data = docSnap.data();
+            return {
+                id: data.id || docSnap.id,
+                name: data.name,
+                price: data.price,
+                category: data.category,
+                image: data.image,
+                images: data.images || [],
+                description: data.description,
+                inStock: data.inStock,
+                createdAt: data.createdAt,
+                collectionId
+            };
+        }
+        return null;
+    } catch (error) {
+        console.error("Error fetching product by path:", error);
+        return null;
+    }
+}
+
+/**
  * Fetch a single collection by ID
  */
 export async function getCollectionById(collectionId: string): Promise<Collection | null> {

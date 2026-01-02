@@ -1,4 +1,4 @@
-import { getProductById } from "@/lib/firebase";
+import { getProduct } from "@/lib/firebase";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProductActions from "./ProductActions"; // Client component for interactivity
@@ -6,12 +6,12 @@ import ProductActions from "./ProductActions"; // Client component for interacti
 export const revalidate = 600;
 
 interface ProductPageProps {
-    params: Promise<{ id: string }>;
+    params: Promise<{ collectionId: string; id: string }>;
 }
 
 export async function generateMetadata({ params }: ProductPageProps) {
-    const { id } = await params;
-    const product = await getProductById(id);
+    const { collectionId, id } = await params;
+    const product = await getProduct(collectionId, id);
 
     if (!product) {
         return {
@@ -31,8 +31,8 @@ export async function generateMetadata({ params }: ProductPageProps) {
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-    const { id } = await params;
-    const product = await getProductById(id);
+    const { collectionId, id } = await params;
+    const product = await getProduct(collectionId, id);
 
     if (!product) {
         notFound();

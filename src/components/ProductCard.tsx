@@ -9,7 +9,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
     return (
-        <Link href={`/product/${product.id}`} style={{ textDecoration: "none", display: "block" }}>
+        <Link href={`/product/${product.collectionId || 'featured'}/${product.id}`} style={{ textDecoration: "none", display: "block" }}>
             <div className="card" style={{ height: "100%", border: "none" }}>
                 <div style={{
                     height: "300px",
